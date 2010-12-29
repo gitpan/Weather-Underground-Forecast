@@ -19,5 +19,6 @@ requires:
   LWP::Simple: 0
   Moose: 0
   XML::Simple: 0
+  XML::Validate: 0
   namespace::autoclean: 0
-version: 0.01
+version: 0.02

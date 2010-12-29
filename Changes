@@ -1,2 +1,9 @@
+0.02      2010-12-29 14:28:29 America/Denver
+          Improvements;
+          - Add raw_data attribute that has the raw XML
+          - Validate XML before using just in case.
+          - improve Synopsis
+          
+
 0.01      2010-12-29 09:04:55 America/Denver
           - Initial Release
