@@ -27,10 +27,11 @@ my %WriteMakefileArgs = (
     'LWP::Simple' => '0',
     'Moose' => '0',
     'XML::Simple' => '0',
-    'XML::Validate' => '0',
-    'namespace::autoclean' => '0'
+    'XML::Validate::LibXML' => '0',
+    'namespace::autoclean' => '0',
+    'strictures' => '1'
   },
-  'VERSION' => '0.03',
+  'VERSION' => '0.04',
   'test' => {
     'TESTS' => 't/*.t'
   }

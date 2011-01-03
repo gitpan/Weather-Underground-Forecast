@@ -1,13 +1,15 @@
+use strictures 1;
 package Weather::Underground::Forecast;
+BEGIN {
+  $Weather::Underground::Forecast::VERSION = '0.04';
+}
 use Moose;
 use namespace::autoclean;
 use LWP::Simple;
 use XML::Simple;
-use XML::Validate;
+use XML::Validate::LibXML;
 
 use Data::Dumper::Concise;
-
-our $VERSION = '0.03';
 
 =head1 Name
 
@@ -76,7 +78,7 @@ after 'set_location' => sub {
 Get the high and low temperatures for the number of days specified.
 
     Returns: Array of two ArrayRefs being the high and low temperatures
-    Example: my ($highs, $lows) = $wunder->temperaures;
+    Example: my ($highs, $lows) = $wunder->temperatures;
 
 =cut
 
@@ -179,7 +181,7 @@ sub _build_raw_data {
     my $content = get( $self->_query_URL );
     die "Couldn't get URL: ", $self->_query_URL unless defined $content;
 
-    my $xml_validator = new XML::Validate( Type => 'LibXML' );
+    my $xml_validator = new XML::Validate::LibXML;
     if ( !$xml_validator->validate($content) ) {
         my $intro   = "Document is invalid\n";
         my $message = $xml_validator->last_error()->{message};
@@ -205,7 +207,7 @@ __END__
 
 =head1 Limitations
 
-It is possible that location could have more than one forecast.
+It is possible that a location could have more than one forecast.
 The behavior of that possibility has not been tested.
 
 =head1 Authors
