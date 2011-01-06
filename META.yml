@@ -18,8 +18,9 @@ requires:
   Data::Dumper::Concise: 0
   LWP::Simple: 0
   Moose: 0
+  XML::LibXML: 0
   XML::Simple: 0
   XML::Validate::LibXML: 0
   namespace::autoclean: 0
   strictures: 1
-version: 0.04
+version: 0.05

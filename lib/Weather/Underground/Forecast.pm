@@ -1,12 +1,13 @@
 use strictures 1;
 package Weather::Underground::Forecast;
 BEGIN {
-  $Weather::Underground::Forecast::VERSION = '0.04';
+  $Weather::Underground::Forecast::VERSION = '0.05';
 }
 use Moose;
 use namespace::autoclean;
 use LWP::Simple;
 use XML::Simple;
+use XML::LibXML;
 use XML::Validate::LibXML;
 
 use Data::Dumper::Concise;

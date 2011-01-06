@@ -26,12 +26,13 @@ my %WriteMakefileArgs = (
     'Data::Dumper::Concise' => '0',
     'LWP::Simple' => '0',
     'Moose' => '0',
+    'XML::LibXML' => '0',
     'XML::Simple' => '0',
     'XML::Validate::LibXML' => '0',
     'namespace::autoclean' => '0',
     'strictures' => '1'
   },
-  'VERSION' => '0.04',
+  'VERSION' => '0.05',
   'test' => {
     'TESTS' => 't/*.t'
   }
