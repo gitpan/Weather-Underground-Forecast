@@ -1,7 +1,7 @@
 use strictures 1;
 package Weather::Underground::Forecast;
 BEGIN {
-  $Weather::Underground::Forecast::VERSION = '0.05';
+  $Weather::Underground::Forecast::VERSION = '0.06';
 }
 use Moose;
 use namespace::autoclean;
