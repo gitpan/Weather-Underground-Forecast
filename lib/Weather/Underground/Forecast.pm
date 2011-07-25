@@ -1,7 +1,7 @@
 use strictures 1;
 package Weather::Underground::Forecast;
 BEGIN {
-  $Weather::Underground::Forecast::VERSION = '0.06';
+  $Weather::Underground::Forecast::VERSION = '0.07';
 }
 use Moose;
 use namespace::autoclean;
@@ -61,7 +61,7 @@ has 'raw_data' => (
 has 'source_URL' => (
     is         => 'ro',
     isa        => 'Any',
-    lazy_build => 1,
+    'default'  => 'http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=',
 );
 
 # When the location changes, we want to clear the data to insure a new data fetch will happen.
@@ -193,12 +193,6 @@ sub _build_raw_data {
 
     # return and set attribute to raw xml when we make it this far.
     return $content;
-}
-
-sub _build_source_URL {
-    my $self = shift;
-    return
-      'http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=';
 }
 
 __PACKAGE__->meta->make_immutable;
